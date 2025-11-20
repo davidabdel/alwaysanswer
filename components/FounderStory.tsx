@@ -58,7 +58,7 @@ export const FounderStory: React.FC = () => {
                    onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       // Fallback placeholder if founder.jpg is not found
-                      target.src = "https://storage.googleapis.com/msgsndr/YaalPPYLvgFNpGoyTfuq/media/691d0453c2cf86e28bf0aacc.png?auto=format&fit=crop&q=80&w=800";
+                      target.src = "https://storage.googleapis.com/msgsndr/YaalPPYLvgFNpGoyTfuq/media/691e843e5e13ec39fa19432f.jpg";
                    }}
                  />
                  <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-sm border border-white/50">
