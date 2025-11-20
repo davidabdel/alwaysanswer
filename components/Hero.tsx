@@ -1,9 +1,14 @@
+
 import React from 'react';
 import { Button } from './ui/Button';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowUpRight, ShieldCheck } from 'lucide-react';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onStartQuiz?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onStartQuiz }) => {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background Gradients */}
@@ -40,7 +45,7 @@ export const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <Button size="lg" icon>Start the Quiz</Button>
+            <Button size="lg" icon onClick={onStartQuiz}>Start the Quiz</Button>
           </div>
 
           <div className="pt-8 flex items-center gap-6 text-sm text-neutral-500">

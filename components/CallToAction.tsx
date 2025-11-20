@@ -1,7 +1,12 @@
+
 import React from 'react';
 import { Button } from './ui/Button';
 
-export const CallToAction: React.FC = () => {
+interface CallToActionProps {
+  onStartQuiz?: () => void;
+}
+
+export const CallToAction: React.FC<CallToActionProps> = ({ onStartQuiz }) => {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
@@ -23,7 +28,11 @@ export const CallToAction: React.FC = () => {
             </div>
 
             <div className="pt-4">
-              <Button size="lg" className="w-full sm:w-auto min-w-[200px] text-lg shadow-xl shadow-primary/20">
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto min-w-[200px] text-lg shadow-xl shadow-primary/20"
+                onClick={onStartQuiz}
+              >
                 Start the Quiz
               </Button>
             </div>

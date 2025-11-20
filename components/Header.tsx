@@ -1,8 +1,13 @@
+
 import React, { useState, useEffect } from 'react';
 import { PhoneCall } from 'lucide-react';
 import { Button } from './ui/Button';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onNavigate?: (section?: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -13,11 +18,10 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleNavClick = (e: React.MouseEvent, section?: string) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigate) {
+      onNavigate(section);
     }
   };
 
@@ -26,7 +30,7 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div 
           className="flex items-center gap-2 text-primary font-bold text-xl tracking-tight cursor-pointer"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={(e) => handleNavClick(e)}
         >
           <div className="bg-primary text-white p-2 rounded-lg">
             <PhoneCall size={20} />
@@ -37,14 +41,14 @@ export const Header: React.FC = () => {
         <nav className="hidden md:flex items-center gap-8">
           <a 
             href="#features" 
-            onClick={(e) => scrollToSection(e, 'features')}
+            onClick={(e) => handleNavClick(e, 'features')}
             className="text-neutral-500 hover:text-primary font-medium transition-colors cursor-pointer"
           >
             Features
           </a>
           <a 
             href="#story" 
-            onClick={(e) => scrollToSection(e, 'story')}
+            onClick={(e) => handleNavClick(e, 'story')}
             className="text-neutral-500 hover:text-primary font-medium transition-colors cursor-pointer"
           >
             Our Story
