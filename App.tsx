@@ -14,8 +14,8 @@ import { ContactPage } from './components/ContactPage';
 type ViewState = 'home' | 'quiz' | 'results' | 'privacy' | 'terms' | 'contact';
 
 const App: React.FC = () => {
-  // Set to 'results' to preview the new page immediately
-  const [view, setView] = useState<ViewState>('results');
+  // Set to 'home' for production
+  const [view, setView] = useState<ViewState>('home');
 
   const handleNavigate = (section?: string) => {
     if (section === 'privacy') {
