@@ -6,7 +6,7 @@ const features = [
   {
     icon: <PhoneIncoming className="w-6 h-6 text-primary" />,
     title: "First Call Experience",
-    description: "60% of customers call a competitor if you don't pick up. We ensure every caller gets a premium, branded experience instantly."
+    description: "85% of customers never call back if you don't pick up. We ensure every caller gets a premium, branded experience instantly."
   },
   {
     icon: <Target className="w-6 h-6 text-primary" />,

@@ -23,7 +23,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartQuiz }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-6"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
             <span className="relative flex h-2 w-2">
@@ -33,22 +33,28 @@ export const Hero: React.FC<HeroProps> = ({ onStartQuiz }) => {
             Don't let another lead slip away
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 leading-[1.1] tracking-tight">
-            Stop Losing Jobs <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">
-              From Missed Calls
-            </span>
-          </h1>
+          <div className="space-y-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 leading-[1.1] tracking-tight">
+              Frustrated About <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">
+                Missed Calls?
+              </span>
+            </h1>
+            
+            <p className="text-2xl md:text-3xl font-semibold text-neutral-800 leading-tight">
+              Even Though You Call Customers Back Right Away?
+            </p>
+          </div>
           
-          <p className="text-lg md:text-xl text-neutral-500 leading-relaxed max-w-lg">
-            Even when you call back quickly, the lead might be gone. Take our 3-minute diagnostic to find out exactly where you're losing revenue and how to fix it instantly.
+          <p className="text-lg md:text-xl text-neutral-500 leading-relaxed max-w-lg pt-2">
+            85% of customers never call back if you miss them. Take our 3-minute diagnostic to find out exactly where you're losing revenue and how to fix it instantly.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <Button size="lg" icon onClick={onStartQuiz}>Start the Quiz</Button>
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <Button size="lg" icon onClick={onStartQuiz}>Start the Assessment</Button>
           </div>
 
-          <div className="pt-8 flex items-center gap-6 text-sm text-neutral-500">
+          <div className="pt-6 flex items-center gap-6 text-sm text-neutral-500">
             <div className="flex items-center gap-2">
               <ShieldCheck className="text-success w-5 h-5" />
               <span>Data Secure</span>

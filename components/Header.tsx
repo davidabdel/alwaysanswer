@@ -29,13 +29,16 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div 
-          className="flex items-center gap-2 text-primary font-bold text-xl tracking-tight cursor-pointer"
+          className="flex items-center gap-2.5 cursor-pointer select-none group"
           onClick={(e) => handleNavClick(e)}
         >
-          <div className="bg-primary text-white p-2 rounded-lg">
-            <PhoneCall size={20} />
+          <div className="bg-primary text-white p-2.5 rounded-xl shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform duration-200">
+            <PhoneCall size={22} strokeWidth={2.5} />
           </div>
-          AlwaysAnswer
+          <div className="text-2xl font-bold tracking-tight flex items-baseline">
+            <span className="text-neutral-900">Always</span>
+            <span className="text-primary">Answer</span>
+          </div>
         </div>
         
         <nav className="hidden md:flex items-center gap-8">

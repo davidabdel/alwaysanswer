@@ -27,7 +27,7 @@ export const FounderStory: React.FC = () => {
                 Businesses are losing a massive amount of money simply because they’re too busy to answer the phone.
               </p>
               <p>
-                When I dug into the data, it was worse than expected. 60% of people call a business directly after finding it online. If you don't pick up, they don't leave a voicemail—they call your competitor.
+                When I dug into the data, it was worse than expected. 85% of customers never call back if you miss them. If you don't pick up, they don't leave a voicemail—they call your competitor.
               </p>
               
               <blockquote className="border-l-4 border-primary pl-6 italic text-neutral-700 my-8">
@@ -58,7 +58,7 @@ export const FounderStory: React.FC = () => {
                    onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       // Fallback placeholder if founder.jpg is not found
-                      target.src = "https://storage.googleapis.com/msgsndr/YaalPPYLvgFNpGoyTfuq/media/691e843e5e13ec39fa19432f.jpg";
+                      target.src = "https://storage.googleapis.com/msgsndr/YaalPPYLvgFNpGoyTfuq/media/691ff969b4bd947f2efd2b79.jpeg";
                    }}
                  />
                  <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-sm border border-white/50">

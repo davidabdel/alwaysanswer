@@ -33,7 +33,7 @@ export const CallToAction: React.FC<CallToActionProps> = ({ onStartQuiz }) => {
                 className="w-full sm:w-auto min-w-[200px] text-lg shadow-xl shadow-primary/20"
                 onClick={onStartQuiz}
               >
-                Start the Quiz
+                Start the Assessment
               </Button>
             </div>
             

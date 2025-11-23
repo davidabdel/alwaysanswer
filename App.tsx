@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -7,13 +6,40 @@ import { FounderStory } from './components/FounderStory';
 import { CallToAction } from './components/CallToAction';
 import { Footer } from './components/Footer';
 import { QuizPage } from './components/QuizPage';
+import { ResultsPage } from './components/ResultsPage';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsOfService } from './components/TermsOfService';
+import { ContactPage } from './components/ContactPage';
 
-type ViewState = 'home' | 'quiz';
+type ViewState = 'home' | 'quiz' | 'results' | 'privacy' | 'terms' | 'contact';
 
 const App: React.FC = () => {
+  // Set to 'home' for production
   const [view, setView] = useState<ViewState>('home');
 
   const handleNavigate = (section?: string) => {
+    if (section === 'privacy') {
+      setView('privacy');
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (section === 'terms') {
+      setView('terms');
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (section === 'contact') {
+      setView('contact');
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (section === 'home') {
+        setView('home');
+        window.scrollTo(0, 0);
+        return;
+    }
+
+    // Normal internal navigation handling (features/story)
     if (view !== 'home') {
       setView('home');
       // Wait for render then scroll
@@ -53,12 +79,20 @@ const App: React.FC = () => {
               window.scrollTo(0, 0);
             }} />
           </>
-        ) : (
+        ) : view === 'quiz' ? (
           <QuizPage />
+        ) : view === 'results' ? (
+          <ResultsPage />
+        ) : view === 'privacy' ? (
+          <PrivacyPolicy />
+        ) : view === 'terms' ? (
+          <TermsOfService />
+        ) : (
+          <ContactPage />
         )}
       </main>
 
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
     </div>
   );
 };

@@ -52,19 +52,16 @@ export const QuizPage: React.FC = () => {
           </div>
         </div>
 
-        {/* High-End Form Container */}
-        <div className="bg-white rounded-[2rem] shadow-2xl shadow-primary/5 border border-white p-2 md:p-3 backdrop-blur-sm">
-          <div className="bg-white rounded-[1.5rem] border border-neutral-100 overflow-hidden relative">
-            {/* Iframe Wrapper */}
-            <div className="w-full relative min-h-[600px] bg-white">
-              <iframe 
-                src="https://api.uconnect.com.au/widget/quiz/cZ8oSvbb9ccEdd8mJNzF" 
-                style={{ border: 'none', width: '100%', minHeight: '600px' }} 
-                scrolling="no" 
-                id="cZ8oSvbb9ccEdd8mJNzF" 
-                title="quiz"
-              ></iframe>
-            </div>
+        {/* Clean Form Container - Removed the "box in a box" padding/borders */}
+        <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl border border-neutral-100 overflow-hidden">
+          <div className="w-full relative min-h-[600px]">
+            <iframe 
+              src="https://api.uconnect.com.au/widget/quiz/cZ8oSvbb9ccEdd8mJNzF" 
+              style={{ border: 'none', width: '100%', minHeight: '600px' }} 
+              scrolling="no" 
+              id="cZ8oSvbb9ccEdd8mJNzF" 
+              title="quiz"
+            ></iframe>
           </div>
         </div>
 
