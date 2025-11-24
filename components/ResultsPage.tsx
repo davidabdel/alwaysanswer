@@ -16,9 +16,7 @@ export const ResultsPage: React.FC = () => {
   ];
 
   useEffect(() => {
-    // Meta Pixel Event Tracking
-    if (window.location.search.includes("page=results")) {
-      // @ts-ignore - fbq is globally defined in index.html
+    if (typeof window !== 'undefined' && window.location.search.includes("page=results")) {
       const fbq = (window as any).fbq;
       if (typeof fbq === 'function') {
         fbq('trackCustom', 'WatchedDemo');
