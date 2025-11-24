@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from './ui/Button';
 import { CheckCircle, Quote, Clock, ShieldCheck, MapPin, Play, Star } from 'lucide-react';
 
@@ -15,6 +14,17 @@ export const ResultsPage: React.FC = () => {
     { name: "Hairdresser", image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=300&q=80" },
     { name: "Lawn Maintenance", image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=300&q=80" }
   ];
+
+  useEffect(() => {
+    // Meta Pixel Event Tracking
+    if (window.location.search.includes("page=results")) {
+      // @ts-ignore - fbq is globally defined in index.html
+      const fbq = (window as any).fbq;
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', 'WatchedDemo');
+      }
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-surface-subtle font-sans">
@@ -33,7 +43,7 @@ export const ResultsPage: React.FC = () => {
         <div className="relative w-full max-w-4xl mx-auto aspect-video bg-neutral-900 rounded-2xl shadow-2xl overflow-hidden mb-12 border-4 border-white">
            <iframe 
              className="absolute inset-0 w-full h-full" 
-             src="https://youtu.be/vxH3brCIciU" 
+             src="https://www.youtube.com/embed/VYealrGZroE?rel=0&modestbranding=1" 
              title="AlwaysAnswer Demo" 
              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
              allowFullScreen
