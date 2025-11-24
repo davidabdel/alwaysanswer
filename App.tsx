@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
@@ -14,8 +15,31 @@ import { ContactPage } from './components/ContactPage';
 type ViewState = 'home' | 'quiz' | 'results' | 'privacy' | 'terms' | 'contact';
 
 const App: React.FC = () => {
-  // Set to 'home' for production
-  const [view, setView] = useState<ViewState>('home');
+  // Initialize state based on URL parameter '?page='
+  const [view, setView] = useState<ViewState>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const page = params.get('page');
+      const validViews: ViewState[] = ['home', 'quiz', 'results', 'privacy', 'terms', 'contact'];
+      if (page && validViews.includes(page as ViewState)) {
+        return page as ViewState;
+      }
+    }
+    return 'home';
+  });
+
+  // Optional: Update URL when view changes without reloading
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      if (view === 'home') {
+        url.searchParams.delete('page');
+      } else {
+        url.searchParams.set('page', view);
+      }
+      window.history.pushState({}, '', url);
+    }
+  }, [view]);
 
   const handleNavigate = (section?: string) => {
     if (section === 'privacy') {
