@@ -9,13 +9,6 @@ export const ContactPage: React.FC = () => {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-
-   useEffect(() => {
-    // Google Tag Manager - Page View Trigger
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('config', 'G-HRWZJ84WQ3');
-    }
-  }, []);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
