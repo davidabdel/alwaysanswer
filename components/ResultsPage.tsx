@@ -23,15 +23,6 @@ export const ResultsPage: React.FC = () => {
       }
     }
   }, []);
- <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRWZJ84WQ3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-HRWZJ84WQ3');
-    </script>
   return (
     <div className="min-h-screen bg-surface-subtle font-sans">
       {/* Header/Hero Section */}
