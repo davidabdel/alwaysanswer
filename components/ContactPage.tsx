@@ -38,15 +38,6 @@ export const ContactPage: React.FC = () => {
       setStatus('error');
     }
   };
- <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRWZJ84WQ3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-HRWZJ84WQ3');
-    </script>
   return (
     <section className="pt-32 pb-24 px-6 bg-surface-subtle min-h-screen">
       <div className="max-w-4xl mx-auto">
