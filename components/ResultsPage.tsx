@@ -16,13 +16,20 @@ export const ResultsPage: React.FC = () => {
   ];
 
   useEffect(() => {
+    // Facebook Pixel - Custom Event
     if (typeof window !== 'undefined' && window.location.search.includes("page=results")) {
       const fbq = (window as any).fbq;
       if (typeof fbq === 'function') {
         fbq('trackCustom', 'WatchedDemo');
       }
     }
+
+    // Google Tag Manager - Page View Trigger
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('config', 'G-HRWZJ84WQ3');
+    }
   }, []);
+  
   return (
     <div className="min-h-screen bg-surface-subtle font-sans">
       {/* Header/Hero Section */}
