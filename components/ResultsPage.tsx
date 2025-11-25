@@ -23,11 +23,6 @@ export const ResultsPage: React.FC = () => {
         fbq('trackCustom', 'WatchedDemo');
       }
     }
-
-    // Google Tag Manager - Page View Trigger
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('config', 'G-HRWZJ84WQ3');
-    }
   }, []);
   
   return (
