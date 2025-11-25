@@ -16,15 +16,7 @@ export const PrivacyPolicy: React.FC = () => {
           <p>
             We collect information you provide directly to us, such as when you fill out a contact form, take our diagnostic quiz, or request a demo. This may include your name, email address, phone number, and business details.
           </p>
- <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRWZJ84WQ3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-HRWZJ84WQ3');
-    </script>
           <h3 className="text-xl font-bold text-neutral-900 mt-8">2. How We Use Your Information</h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>To provide, operate, and maintain our services.</li>
