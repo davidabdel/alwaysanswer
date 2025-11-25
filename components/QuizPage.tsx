@@ -9,15 +9,6 @@ export const QuizPage: React.FC = () => {
     script.src = "https://api.uconnect.com.au/js/form_embed.js";
     script.async = true;
     document.body.appendChild(script);
- <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRWZJ84WQ3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-HRWZJ84WQ3');
-    </script>
     return () => {
       // Cleanup script if component unmounts
       if (document.body.contains(script)) {
