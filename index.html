@@ -8,8 +8,13 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-HRWZJ84WQ3');
+      gtag('event', 'page_view', {
+  page_location: window.location.href,
+  page_path: window.location.pathname + window.location.search,
+  page_title: document.title
+});
     </script>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Always Answer | Stop Losing Jobs</title>
