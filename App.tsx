@@ -28,6 +28,17 @@ const App: React.FC = () => {
     return 'home';
   });
 
+   // Google Tag Manager - Page View Trigger
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'page_view', {
+        page_location: window.location.href,
+        page_path: window.location.pathname + window.location.search,
+        page_title: document.title,
+      });
+    }
+  }, []);
+  
   // Optional: Update URL when view changes without reloading
   useEffect(() => {
     if (typeof window !== 'undefined') {
