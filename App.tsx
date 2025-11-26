@@ -54,19 +54,6 @@ useEffect(() => {
   window.history.replaceState({}, '', url);
 }, [view]);
 
-  // Optional: Update URL when view changes without reloading
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      if (view === 'home') {
-        url.searchParams.delete('page');
-      } else {
-        url.searchParams.set('page', view);
-      }
-      window.history.pushState({}, '', url);
-    }
-  }, [view]);
-
   const handleNavigate = (section?: string) => {
     if (section === 'privacy') {
       setView('privacy');
