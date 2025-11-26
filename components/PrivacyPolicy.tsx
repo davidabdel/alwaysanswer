@@ -1,6 +1,14 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 
 export const PrivacyPolicy: React.FC = () => {
+  useEffect(() => {
+    // Google Tag Manager - Page View Trigger
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('config', 'G-HRWZJ84WQ3');
+    }
+  }, []);
+
   return (
     <section className="pt-32 pb-24 px-6 bg-surface-subtle min-h-screen">
       <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-neutral-100">

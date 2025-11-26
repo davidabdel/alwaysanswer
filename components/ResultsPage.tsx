@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from './ui/Button';
 import { CheckCircle, Quote, Clock, ShieldCheck, MapPin, Play, Star } from 'lucide-react';
@@ -23,8 +24,13 @@ export const ResultsPage: React.FC = () => {
         fbq('trackCustom', 'WatchedDemo');
       }
     }
+
+    // Google Tag Manager - Page View Trigger
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('config', 'G-HRWZJ84WQ3');
+    }
   }, []);
-  
+
   return (
     <div className="min-h-screen bg-surface-subtle font-sans">
       {/* Header/Hero Section */}
@@ -41,8 +47,8 @@ export const ResultsPage: React.FC = () => {
         {/* Video Embed */}
         <div className="relative w-full max-w-4xl mx-auto aspect-video bg-neutral-900 rounded-2xl shadow-2xl overflow-hidden mb-12 border-4 border-white">
            <iframe 
-             className="absolute inset-0 w-full h-full" 
-             src="https://www.youtube.com/embed/-fvaRbVmp4w?rel=0&modestbranding=1"
+             className="absolute inset-0 w-full h-full"
+             src="https://www.youtube.com/embed/-fvaRbVmp4w?rel=0&modestbranding=1" 
              title="AlwaysAnswer Demo" 
              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
              allowFullScreen

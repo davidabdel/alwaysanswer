@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { Button } from './ui/Button';
 import { Mail, MapPin, Phone, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 
@@ -9,7 +10,14 @@ export const ContactPage: React.FC = () => {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  
+
+  useEffect(() => {
+    // Google Tag Manager - Page View Trigger
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('config', 'G-HRWZJ84WQ3');
+    }
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -38,6 +46,7 @@ export const ContactPage: React.FC = () => {
       setStatus('error');
     }
   };
+
   return (
     <section className="pt-32 pb-24 px-6 bg-surface-subtle min-h-screen">
       <div className="max-w-4xl mx-auto">

@@ -9,7 +9,12 @@ export const QuizPage: React.FC = () => {
     script.src = "https://api.uconnect.com.au/js/form_embed.js";
     script.async = true;
     document.body.appendChild(script);
-    
+
+    // Google Tag Manager - Page View Trigger
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('config', 'G-HRWZJ84WQ3');
+    }
+
     return () => {
       // Cleanup script if component unmounts
       if (document.body.contains(script)) {
