@@ -29,15 +29,30 @@ const App: React.FC = () => {
   });
 
   // Google Tag Manager - Page View Trigger
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'page_view', {
-        page_location: window.location.href,
-        page_path: window.location.pathname + window.location.search,
-        page_title: document.title,
-      });
-    }
-  }, []);
+  // Only update the URL when the view is changed by the user,
+// NOT on initial load when the URL defines the view.
+useEffect(() => {
+  if (typeof window === 'undefined') return;
+
+  const currentParams = new URLSearchParams(window.location.search);
+  const incomingPage = currentParams.get('page');
+
+  // If the incoming URL ALREADY defined the view, do NOT overwrite it
+  if (incomingPage === view) {
+    return;
+  }
+
+  // Now update URL only if view changed internally
+  const url = new URL(window.location.href);
+
+  if (view === 'home') {
+    url.searchParams.delete('page');
+  } else {
+    url.searchParams.set('page', view);
+  }
+
+  window.history.replaceState({}, '', url);
+}, [view]);
 
   // Optional: Update URL when view changes without reloading
   useEffect(() => {
